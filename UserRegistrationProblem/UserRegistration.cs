@@ -15,6 +15,7 @@ namespace UserRegistrationProblem
         public Regex MobileNumber = new Regex(@"^[0-9]{2}\s[0-9]{10}$");
         public Regex PasswordRuleOne = new Regex(@"^[A-Za-z]{8,}$");
         public Regex PasswordRuleTwo = new Regex(@"^[A-Za-z]*[A-Z]{1,}[A-Za-z]*$");
+        public Regex PasswordRuleThree = new Regex(@"^[A-Za-z 0-9]{1,}[A-Z]{1,}[A-Za-z 0-9]*$");
 
         public void ValidFirstName(string firstName)
         {
@@ -56,6 +57,13 @@ namespace UserRegistrationProblem
         public void ValidPasswordRuleTwo(string passwordRule2)
         { 
             if (PasswordRuleTwo.IsMatch(passwordRule2))
+                Console.WriteLine("password is valid");
+            else
+                Console.WriteLine("password is Invalid");
+        }
+        public void ValidPasswordRuleThree(string passwordRule3)
+        {
+            if (PasswordRuleThree.IsMatch(passwordRule3))
                 Console.WriteLine("password is valid");
             else
                 Console.WriteLine("password is Invalid");
