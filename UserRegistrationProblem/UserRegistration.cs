@@ -10,6 +10,7 @@ namespace UserRegistrationProblem
     internal class UserRegistration
     {
         public Regex FirstName = new Regex(@"^[A-Z][A-Za-z]{2,}$");
+        public Regex LastName = new Regex(@"^[A-Z][A-Za-z]{2,}$");
         public void ValidFirstName(string firstName)
         {
             if (FirstName.IsMatch(firstName))
@@ -17,6 +18,13 @@ namespace UserRegistrationProblem
             else
                 Console.WriteLine("firstName is Invalid");
 
+        }
+        public void ValidLastName(string lastName)
+        {
+            if (FirstName.IsMatch(lastName))
+                Console.WriteLine("lastName is valid");
+            else
+                Console.WriteLine("lastName is Invalid");
         }
     }
 }
