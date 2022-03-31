@@ -15,7 +15,7 @@ namespace UserRegistrationProblem
             while (flag)
             {
                 Console.WriteLine("Enter Program number to get executed \n1. Validate first name \n2.Validate Lastname " +
-                   "\n3. Validate Email \n4..Exit");
+                   "\n3. Validate Email \n4. Validate Mobile No \n6. Exit");
                 UserRegistration Checkpattern = new UserRegistration();
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
@@ -40,6 +40,11 @@ namespace UserRegistrationProblem
                         Checkpattern.ValidEmail(email);
                         break;
                     case 4:
+                        Console.WriteLine("Enter Mobile No. :");
+                        string mobilenum = Console.ReadLine();
+                        Checkpattern.ValidMobile(mobilenum);
+                        break;
+                    case 5:
                         flag = false;
                         break;
                     default:
