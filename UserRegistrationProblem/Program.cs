@@ -15,7 +15,7 @@ namespace UserRegistrationProblem
             while (flag)
             {
                 Console.WriteLine("Enter Program number to get executed \n1. Validate first name \n2.Validate Lastname " +
-                   "\n3. Validate Email \n4. Validate Mobile No \n5. ValidatePasswordRule1 \n6. Exit");
+                   "\n3. Validate Email \n4. Validate Mobile No \n5. ValidatePasswordRule1 \n6. Validate Password Rule2 \n7. Exit");
                 UserRegistration Checkpattern = new UserRegistration();
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
@@ -51,6 +51,13 @@ namespace UserRegistrationProblem
                         Checkpattern.ValidPasswordRuleOne(password);
                         break;
                     case 6:
+                        Console.WriteLine("Enter Password :");
+                        Console.WriteLine("*Password for minimum 8 characters");
+                        Console.WriteLine("*Atleat One UpperCase");
+                        string passwordRule2 = Console.ReadLine();
+                        Checkpattern.ValidPasswordRuleTwo(passwordRule2);
+                        break;
+                    case 7:
                         flag = false;
                         break;
                     default:
